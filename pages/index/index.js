@@ -1,6 +1,6 @@
 //index.js
 //获取应用实例
-var app = getApp()
+var app = getApp();
 Page({
   data: {
     indicatorDots: true,
@@ -19,7 +19,7 @@ Page({
 
     hasNoCoupons:true,
     coupons: [],
-    searchInput: '',
+    searchInput: ''
   },
 
   tabClick: function (e) {
@@ -62,10 +62,10 @@ Page({
     // console.log('scrollTop:'+scrollTop)
   },
   onLoad: function () {
-    var that = this
+    var that = this;
     wx.setNavigationBarTitle({
       title: wx.getStorageSync('mallName')
-    })
+    });
     /*
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo){
@@ -93,7 +93,7 @@ Page({
           });
         }
       }
-    })
+    });
     wx.request({
       url: 'https://api.it120.cc/'+ app.globalData.subDomain +'/shop/goods/category/all',
       success: function(res) {
@@ -109,7 +109,7 @@ Page({
         });
         that.getGoodsList(0);
       }
-    })
+    });
     that.getCoupons ();
     that.getNotice ();
   },
@@ -117,7 +117,7 @@ Page({
     if (categoryId == 0) {
       categoryId = "";
     }
-    console.log(categoryId)
+    console.log(categoryId);
     var that = this;
     wx.request({
       url: 'https://api.it120.cc/'+ app.globalData.subDomain +'/shop/goods/list',
@@ -133,7 +133,7 @@ Page({
         var goods = [];
         if (res.data.code != 0 || res.data.data.length == 0) {
           that.setData({
-            loadingMoreHidden:false,
+            loadingMoreHidden:false
           });
           return;
         }
@@ -141,7 +141,7 @@ Page({
           goods.push(res.data.data[i]);
         }
         that.setData({
-          goods:goods,
+          goods:goods
         });
       }
     })
