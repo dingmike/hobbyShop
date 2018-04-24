@@ -3,6 +3,19 @@
 var app = getApp();
 Page({
   data: {
+    // small shop data -start
+      items: [],
+      headBanner: [],
+      categoryList: [],
+      availableCouponList: [],
+      kolInfo: {},
+      toView: "",
+      isShow: !1,
+      isFixed: !1,
+      windowHeight: wx.getSystemInfoSync().windowHeight,
+      showFoot: !0,
+      autoLoadNormalData: !1,
+    //small shop data -end
     indicatorDots: true,
     autoplay: true,
     interval: 3000,
